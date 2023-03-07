@@ -1,12 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;0,900;1,900&display=swap");
 
+/*whole page styling and colour vairables*/
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-decoration: none;
   list-style: none;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -14,47 +16,81 @@
   --text-colour: #fff;
   --main-colour: #29fd53;
   --hover-colour: #0088a9;
-}
-
-li,
-a {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: var(--text-colour);
-  text-decoration: none;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: #fff solid 2px;
-  padding: 30px 10%;
+  --big-font: 5rem;
+  --h2-font: 3rem;
+  --p-font: 1rem;
 }
 
 .logo {
-  cursor: pointer;
+  color: var(--text-colour);
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: 5px;
 }
 
-.nav-bar-links {
-  list-style: none;
-}
-.nav-bar-links li {
-  display: inline-block;
-  padding: 0 50px;
-}
-
-.nav-bar-links li a {
-  transition: all 0.3s ease 0s;
-}
-.nav-bar-links li a:hover {
-  transition: all 0.3s ease 0s;
+span {
   color: var(--hover-colour);
 }
 
 body {
-  min-width: 100vh;
   background: var(--bg-colour);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  padding: 22px 15%;
+  border-bottom: 1px solid transparent;
+  transition: all 0.45s ease;
+}
+
+.nav-bar-list {
+  display: flex;
+}
+
+.nav-bar-list a {
   color: var(--text-colour);
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0 25px;
+  transition: all 0.45s ease;
+}
+
+.nav-bar-list a:hover {
+  color: var(--hover-colour);
+  font-size: 20px;
+}
+
+.nav-bar-list a.active {
+  color: var(--hover-colour);
+}
+
+#menu-icon {
+  cursor: pointer;
+  z-index: 10001;
+  margin-left: 25px;
+}
+
+/* 
+styling for introsection */
+
+.intro-section h2 {
+  color: var(--text-colour);
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translate(-50%);
+}
+
+@media (max-width: 600px) {
+  .nav-bar-list a {
+    display: none;
+  }
 }

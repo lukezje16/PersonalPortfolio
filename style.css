@@ -14,6 +14,8 @@
   color: var(--text-colour);
 }
 
+/*setting root colours*/
+
 :root {
   --bg-colour: #222327;
   --text-colour: #fff;
@@ -24,9 +26,13 @@
   --p-font: 1rem;
 }
 
+/*************************************/
+/*styling for logo and setting colours and background*/
+/*************************************/
+
 .logo {
   color: var(--text-colour);
-  font-size: 2rem;
+  font-size: Clamp(1rem, 1rem + 2.5vw, 3rem);
   font-weight: 800;
   letter-spacing: 5px;
 }
@@ -39,6 +45,10 @@ body {
   background: var(--bg-colour);
 }
 
+/*************************************/
+/*styling for fixed nav bar*/
+/*************************************/
+
 header {
   position: fixed;
   width: 100%;
@@ -49,10 +59,9 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: var(--bg-colour);
-  padding: 22px 15%;
+  padding: 20px 5%;
   border-bottom: 1px solid transparent;
   transition: all 0.45s ease;
-  border: solid white 2px;
 }
 
 .nav-bar-list {
@@ -64,6 +73,7 @@ header {
   font-size: 17px;
   font-weight: 500;
   margin: 0 25px;
+  padding: 50px;
   transition: all 0.45s ease;
 }
 
@@ -80,10 +90,12 @@ header {
   cursor: pointer;
   z-index: 10001;
   margin-left: 25px;
+  display: none;
 }
 
-/* 
-styling for introsection */
+/*************************************/
+/*styling for intro section*/
+/*************************************/
 
 .intro-section {
   display: flex;
@@ -98,7 +110,7 @@ styling for introsection */
 
 .intro-section h2 {
   color: var(--text-colour);
-  border: solid white 2px;
+
   font-size: 4rem;
   font-family: "Playfair Display", serif;
   font-weight: 400;
@@ -106,26 +118,30 @@ styling for introsection */
 .intro-div2 {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .intro-div2 img {
   border-radius: 5px;
   flex: 1;
-  max-width: 100%;
-  height: 300px;
+  max-width: 500px;
 }
 
 .intro-section p {
   font-size: 1rem;
 }
 
-@media (max-width: 1180px) {
-  .logo {
-    font-size: 1.5rem;
-  }
-  .nav-bar-list a {
+/*************************************/
+/*media Queries*/
+/*************************************/
+
+@media (max-width: 830px) {
+  .nav-bar-list {
     display: none;
+  }
+
+  #menu-icon {
+    display: flex;
   }
 }
 
@@ -133,10 +149,8 @@ styling for introsection */
   .nav-bar-list a {
     display: none;
   }
-
-  .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-  }
 }
+
+/*************************************/
+/**/
+/*************************************/
